@@ -1,0 +1,35 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1628;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.1" />
+      <stop offset="50%" style="stop-color:#f4d03f;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#heroGradient)"/>
+  
+  <!-- Subtle property silhouette -->
+  <g opacity="0.3">
+    <!-- House silhouette -->
+    <path d="M960 400 L800 500 L800 800 L1120 800 L1120 500 Z" fill="#d4af37" opacity="0.2"/>
+    <rect x="850" y="700" width="70" height="100" fill="#d4af37" opacity="0.15"/>
+    <rect x="1000" y="700" width="70" height="100" fill="#d4af37" opacity="0.15"/>
+    <!-- Mountains in background -->
+    <path d="M0 600 L400 300 L800 450 L1200 200 L1600 350 L1920 250 L1920 1080 L0 1080 Z" fill="#243b53" opacity="0.4"/>
+  </g>
+  
+  <!-- Overlay gradient -->
+  <rect width="1920" height="1080" fill="url(#goldAccent)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="300" cy="200" r="150" fill="#d4af37" opacity="0.05"/>
+  <circle cx="1620" cy="880" r="200" fill="#f4d03f" opacity="0.05"/>
+</svg>
+

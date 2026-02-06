@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+  }
+
+  * {
+    @apply border-fog-600;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-background-primary text-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  /* Premium Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-forest-charcoal disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply btn bg-amber-500 text-forest-charcoal hover:bg-amber-400 focus:ring-amber-500 shadow-accent hover:scale-[1.02];
+  }
+
+  .btn-secondary {
+    @apply btn bg-fog-800 text-white border border-fog-600 hover:bg-fog-700 hover:border-amber-500/50 focus:ring-amber-500 shadow-premium;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-amber-500 text-amber-400 bg-transparent hover:bg-amber-500 hover:text-forest-charcoal focus:ring-amber-500 shadow-accent hover:scale-[1.02];
+  }
+
+  /* Premium Input Styles */
+  .input {
+    @apply w-full rounded-lg border border-fog-600 bg-fog-800/50 backdrop-blur-sm px-4 py-3 text-base text-white placeholder-fog-400 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 transition-all duration-300;
+  }
+
+  .input:focus {
+    @apply bg-fog-700/70;
+  }
+
+  .textarea {
+    @apply input min-h-[120px] resize-y;
+  }
+
+  .select {
+    @apply input appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23c4913c' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+
+  /* Premium Card Styles */
+  .card {
+    @apply rounded-xl border border-fog-600/50 bg-fog-800/40 backdrop-blur-md p-6 shadow-premium hover:shadow-premium-lg transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-glass;
+  }
+
+  /* Glassmorphism Utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Accent Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent;
+  }
+
+  /* Scroll-triggered reveal (used with RevealSection) */
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-section.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Skip to content link - visible on focus */
+  .skip-link {
+    @apply sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:w-auto focus:h-auto focus:p-4 focus:m-0 focus:overflow-visible focus:bg-amber-500 focus:text-forest-charcoal focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-forest-charcoal;
+  }
+
+  .skip-link:focus {
+    clip: auto;
+    clip-path: none;
+    width: auto;
+    height: auto;
+  }
+
+  /* Smooth Scroll Progress Indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #c4913c, #e3a333);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+  }
+}

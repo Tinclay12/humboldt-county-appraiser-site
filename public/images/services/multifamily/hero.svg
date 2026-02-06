@@ -1,0 +1,28 @@
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="multiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2332;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#multiGrad)"/>
+  <!-- Apartment building -->
+  <g opacity="0.4" transform="translate(400, 100)">
+    <rect x="100" y="100" width="200" height="280" fill="#d4af37"/>
+    <!-- Multiple units/windows -->
+    <g fill="#0a1628" opacity="0.3">
+      <rect x="120" y="120" width="35" height="45"/>
+      <rect x="165" y="120" width="35" height="45"/>
+      <rect x="210" y="120" width="35" height="45"/>
+      <rect x="255" y="120" width="35" height="45"/>
+      <rect x="120" y="180" width="35" height="45"/>
+      <rect x="165" y="180" width="35" height="45"/>
+      <rect x="210" y="180" width="35" height="45"/>
+      <rect x="255" y="180" width="35" height="45"/>
+    </g>
+    <!-- Entrance -->
+    <rect x="175" y="300" width="50" height="80" fill="#f4d03f"/>
+  </g>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="24" fill="#d4af37" opacity="0.3" text-anchor="middle">Multifamily Property Appraisal</text>
+</svg>
+

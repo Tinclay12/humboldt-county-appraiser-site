@@ -1,0 +1,50 @@
+// Script to generate location-specific SVG placeholders
+// Run with: node scripts/generate-location-svgs.js
+
+const fs = require('fs');
+const path = require('path');
+
+const locations = [
+  { name: 'Eureka', slug: 'eureka', description: 'Coastal city, historic Victorian architecture' },
+  { name: 'Arcata', slug: 'arcata', description: 'College town, redwood forests, plaza' },
+  { name: 'Fortuna', slug: 'fortuna', description: 'River town, agricultural area' },
+  { name: 'McKinleyville', slug: 'mckinleyville', description: 'Coastal community, beaches' },
+  { name: 'Trinidad', slug: 'trinidad', description: 'Small coastal town, scenic harbor' },
+  { name: 'Ferndale', slug: 'ferndale', description: 'Victorian village, dairy farming' },
+  { name: 'Rio Dell', slug: 'rio-dell', description: 'River community, redwood region' },
+  { name: 'Blue Lake', slug: 'blue-lake', description: 'Small town, river and forest' },
+  { name: 'Hoopa', slug: 'hoopa', description: 'Native American reservation, Trinity River' },
+];
+
+const generateLocationSVG = (location) => {
+  return `<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="locGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2332;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#locGrad)"/>
+  <!-- Generic property silhouette -->
+  <g opacity="0.4" transform="translate(450, 150)">
+    <path d="M150 100 L100 200 L100 350 L200 350 L200 200 Z" fill="#d4af37"/>
+    <rect x="130" y="250" width="40" height="60" fill="#f4d03f"/>
+    <rect x="175" y="280" width="50" height="70" fill="#d4af37"/>
+  </g>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="28" fill="#d4af37" opacity="0.4" text-anchor="middle" font-weight="bold">${location.name}, California</text>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="18" fill="#f4d03f" opacity="0.3" text-anchor="middle">Real Estate Appraisal Services</text>
+</svg>`;
+};
+
+locations.forEach(location => {
+  const dir = path.join(__dirname, '..', 'public', 'images', 'locations', location.slug);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  const svg = generateLocationSVG(location);
+  fs.writeFileSync(path.join(dir, 'hero.svg'), svg);
+  console.log(`Generated ${location.slug}/hero.svg`);
+});
+
+console.log('All location SVGs generated!');
+
