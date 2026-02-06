@@ -52,7 +52,7 @@ This form was submitted from humboldtcountyappraiser.com
 
 export const sendContactEmail = async (data: ContactFormInput): Promise<void> => {
   const emailProvider = process.env.EMAIL_PROVIDER || 'none'
-  const recipientEmail = process.env.CONTACT_EMAIL || 'info@tidwellassociates.com'
+  const recipientEmail = process.env.CONTACT_EMAIL || 'appraisal@tidwellassociates.com'
 
   if (emailProvider === 'none') {
     // In development, just log the email
