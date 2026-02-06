@@ -24,7 +24,7 @@ const HomeHero = () => {
             <span className="text-white">Real Estate Appraiser</span>
           </h1>
           <p
-            className="mb-12 text-xl md:text-2xl text-fog-200 leading-relaxed animate-fade-in-up"
+            className="mb-12 text-xl md:text-2xl text-white leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.1s', animationFillMode: 'both' }}
           >
             Expert property valuations for residential, commercial, agricultural, and specialty
